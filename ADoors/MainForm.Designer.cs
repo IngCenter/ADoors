@@ -69,7 +69,7 @@ namespace ADoors
             this.OptionsPanel.Controls.Add(this.ModelChoice);
             this.OptionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OptionsPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OptionsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.OptionsPanel.Name = "OptionsPanel";
             this.OptionsPanel.Size = new System.Drawing.Size(267, 266);
             this.OptionsPanel.TabIndex = 0;
@@ -78,7 +78,7 @@ namespace ADoors
             // 
             this.ComputeButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ComputeButton.Location = new System.Drawing.Point(0, 238);
-            this.ComputeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComputeButton.Margin = new System.Windows.Forms.Padding(4);
             this.ComputeButton.Name = "ComputeButton";
             this.ComputeButton.Size = new System.Drawing.Size(267, 28);
             this.ComputeButton.TabIndex = 12;
@@ -89,7 +89,7 @@ namespace ADoors
             // DoorCountChoice
             // 
             this.DoorCountChoice.Location = new System.Drawing.Point(120, 193);
-            this.DoorCountChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoorCountChoice.Margin = new System.Windows.Forms.Padding(4);
             this.DoorCountChoice.Minimum = new decimal(new int[] {
             1,
             0,
@@ -119,7 +119,7 @@ namespace ADoors
             this.PlatbandChoice.AutoSize = true;
             this.PlatbandChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PlatbandChoice.Location = new System.Drawing.Point(4, 166);
-            this.PlatbandChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PlatbandChoice.Margin = new System.Windows.Forms.Padding(4);
             this.PlatbandChoice.Name = "PlatbandChoice";
             this.PlatbandChoice.Size = new System.Drawing.Size(95, 21);
             this.PlatbandChoice.TabIndex = 9;
@@ -131,7 +131,7 @@ namespace ADoors
             this.DoorHandleChoice.AutoSize = true;
             this.DoorHandleChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DoorHandleChoice.Location = new System.Drawing.Point(4, 138);
-            this.DoorHandleChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoorHandleChoice.Margin = new System.Windows.Forms.Padding(4);
             this.DoorHandleChoice.Name = "DoorHandleChoice";
             this.DoorHandleChoice.Size = new System.Drawing.Size(93, 21);
             this.DoorHandleChoice.TabIndex = 8;
@@ -146,7 +146,7 @@ namespace ADoors
             0,
             0});
             this.WidthChoice.Location = new System.Drawing.Point(75, 106);
-            this.WidthChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WidthChoice.Margin = new System.Windows.Forms.Padding(4);
             this.WidthChoice.Maximum = new decimal(new int[] {
             900,
             0,
@@ -180,10 +180,15 @@ namespace ADoors
             // 
             this.TypeChoice.FormattingEnabled = true;
             this.TypeChoice.Items.AddRange(new object[] {
-            "к",
-            "к"});
+            "Без стеклянных элементов",
+            "Частично остеклённый",
+            "Остеклённый",
+            "Частично остеклённый (Матовое стекло)",
+            "Остеклённый (Матовое стекло) ",
+            "Частично остеклённый (Искажённое стекло)",
+            "Остеклённый (Искажённое стекло) "});
             this.TypeChoice.Location = new System.Drawing.Point(73, 73);
-            this.TypeChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TypeChoice.Margin = new System.Windows.Forms.Padding(4);
             this.TypeChoice.Name = "TypeChoice";
             this.TypeChoice.Size = new System.Drawing.Size(188, 24);
             this.TypeChoice.TabIndex = 5;
@@ -202,9 +207,11 @@ namespace ADoors
             // 
             this.ColorChoice.FormattingEnabled = true;
             this.ColorChoice.Items.AddRange(new object[] {
-            "Эмаль"});
+            "Эмаль",
+            "Бреннерский орех",
+            "Венге"});
             this.ColorChoice.Location = new System.Drawing.Point(73, 42);
-            this.ColorChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ColorChoice.Margin = new System.Windows.Forms.Padding(4);
             this.ColorChoice.Name = "ColorChoice";
             this.ColorChoice.Size = new System.Drawing.Size(188, 24);
             this.ColorChoice.TabIndex = 3;
@@ -234,9 +241,13 @@ namespace ADoors
             // 
             this.ModelChoice.FormattingEnabled = true;
             this.ModelChoice.Items.AddRange(new object[] {
-            "Леонардо"});
+            "Леонардо",
+            "Трио",
+            "Черчилль",
+            "Рузвельт",
+            "Маргарет"});
             this.ModelChoice.Location = new System.Drawing.Point(73, 7);
-            this.ModelChoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ModelChoice.Margin = new System.Windows.Forms.Padding(4);
             this.ModelChoice.Name = "ModelChoice";
             this.ModelChoice.Size = new System.Drawing.Size(188, 24);
             this.ModelChoice.TabIndex = 0;
@@ -247,7 +258,7 @@ namespace ADoors
             this.DoorPanel.Controls.Add(this.label6);
             this.DoorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DoorPanel.Location = new System.Drawing.Point(267, 0);
-            this.DoorPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoorPanel.Margin = new System.Windows.Forms.Padding(4);
             this.DoorPanel.Name = "DoorPanel";
             this.DoorPanel.Size = new System.Drawing.Size(346, 266);
             this.DoorPanel.TabIndex = 1;
@@ -267,7 +278,7 @@ namespace ADoors
             this.ClientSize = new System.Drawing.Size(613, 266);
             this.Controls.Add(this.DoorPanel);
             this.Controls.Add(this.OptionsPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Калькулятор стоимости двери";
             this.OptionsPanel.ResumeLayout(false);
