@@ -172,8 +172,13 @@ namespace ADoors
             // 
             this.TypeChoice.FormattingEnabled = true;
             this.TypeChoice.Items.AddRange(new object[] {
-            "к",
-            "к"});
+            "Без стеклянных элементов",
+            "Частично остеклённый",
+            "Остеклённый",
+            "Частично остеклённый (Матовое стекло)",
+            "Остеклённый (Матовое стекло)",
+            "Частично остеклённый (Искажённое стекло)",
+            "Остеклённый (Искажённое стекло)"});
             this.TypeChoice.Location = new System.Drawing.Point(55, 59);
             this.TypeChoice.Name = "TypeChoice";
             this.TypeChoice.Size = new System.Drawing.Size(142, 21);
@@ -193,7 +198,9 @@ namespace ADoors
             this.ColorChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ColorChoice.FormattingEnabled = true;
             this.ColorChoice.Items.AddRange(new object[] {
-            "Эмаль"});
+            "Эмаль",
+            "Бреннерский орех",
+            "Венге"});
             this.ColorChoice.Location = new System.Drawing.Point(55, 34);
             this.ColorChoice.Name = "ColorChoice";
             this.ColorChoice.Size = new System.Drawing.Size(142, 21);
@@ -222,7 +229,11 @@ namespace ADoors
             this.ModelChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModelChoice.FormattingEnabled = true;
             this.ModelChoice.Items.AddRange(new object[] {
-            "Леонардо"});
+            "Леонардо",
+            "Трио",
+            "Черчилль",
+            "Рузвельт",
+            "Маргарет"});
             this.ModelChoice.Location = new System.Drawing.Point(55, 6);
             this.ModelChoice.Name = "ModelChoice";
             this.ModelChoice.Size = new System.Drawing.Size(142, 21);
