@@ -12,14 +12,15 @@ namespace ADoors
 
         private void ComputeButton_Click(object sender, EventArgs e)
         {
-            new Door(
-                (ModelId)Enum.Parse(typeof(ModelId), ModelChoice.SelectedItem.ToString()),
-                (ColorId)Enum.Parse(typeof(ColorId), ColorChoice.SelectedItem.ToString()),
-                TypeChoice.SelectedItem.ToString(),
+            Door door = new Door(
+                (ModelId)Enum.Parse(typeof(ModelId), ModelChoice.Text.ToString()),
+                (ColorId)Enum.Parse(typeof(ColorId), ColorChoice.Text.ToString()),
+                TypeChoice.Text.ToString(),
                 Convert.ToInt32(WidthChoice.Value),
                 DoorHandleChoice.Checked,
                 PlatbandChoice.Checked
-            ).ComputeCost(Convert.ToInt32(DoorCountChoice.Value));
+            );
+            label6.Text = door.ComputeCost(Convert.ToInt32(DoorCountChoice.Value)).ToString() + " рублей";
         }
     }
 }

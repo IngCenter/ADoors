@@ -79,7 +79,20 @@ namespace ADoors
         /// <returns></returns>
         public int ComputeCost(int _count = 1)
         {
-            return 0;
+            int basePrice = 0;
+            if (Model == (int)ModelId.Леонардо)
+                basePrice = 10000;
+            else if (Model == (int)ModelId.Маргарет)
+                basePrice = 78000;
+            else if (Model == (int)ModelId.Рузвельт)
+                basePrice = 8000;
+            else if (Model == (int)ModelId.Трио)
+                basePrice = 14000;
+            else if (Model == (int)ModelId.Черчилль)
+                basePrice = 16000;
+
+
+            return basePrice;
         }
     }
 }
