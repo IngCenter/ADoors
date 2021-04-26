@@ -74,25 +74,37 @@ namespace ADoors
         }
 
         /// <summary>
-        /// Рассчитать стоимость
+        /// Рассчитать стоимость дверки
         /// </summary>
-        /// <returns></returns>
-        public int ComputeCost(int _count = 1)
+        /// <param name="count">Кол-во дверей</param>
+        /// <returns>Стоимость двери(-ей) с учётом количества</returns>
+        public int ComputeCost(int count = 1)
         {
             int basePrice = 0;
-            if (Model == (int)ModelId.Леонардо)
-                basePrice = 10000;
-            else if (Model == (int)ModelId.Маргарет)
-                basePrice = 78000;
-            else if (Model == (int)ModelId.Рузвельт)
-                basePrice = 8000;
-            else if (Model == (int)ModelId.Трио)
-                basePrice = 14000;
-            else if (Model == (int)ModelId.Черчилль)
-                basePrice = 16000;
 
+            switch ((ModelId)Model)
+            {
+                case ModelId.Леонардо:
+                    basePrice = 10000;
+                    break;
+                case ModelId.Маргарет:
+                    basePrice = 78000;
+                    break;
+                case ModelId.Рузвельт:
+                    basePrice = 8000;
+                    break;
+                case ModelId.Трио:
+                    basePrice = 14000;
+                    break;
+                case ModelId.Черчилль:
+                    basePrice = 16000;
+                    break;
+                default:
+                    basePrice = 0;
+                    break;
+            }
 
-            return basePrice;
+            return basePrice * count;
         }
     }
 }
