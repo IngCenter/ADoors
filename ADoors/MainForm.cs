@@ -22,7 +22,7 @@ namespace ADoors
                     DoorHandleChoice.Checked,
                     PlatbandChoice.Checked
                 );
-                label6.Text = door.ComputeCost(Convert.ToInt32(DoorCountChoice.Value)).ToString() + " рублей";
+                Pricelabel.Text = door.ComputeCost(Convert.ToInt32(DoorCountChoice.Value)).ToString() + " рублей";
             }
             catch (Exception)
             {
