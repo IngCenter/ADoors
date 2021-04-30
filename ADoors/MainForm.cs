@@ -34,5 +34,11 @@ namespace ADoors
                 );
             }
         }
+
+        private void ModelChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ModelChoice.Text != "" && ColorChoice.Text != "")
+                ComputeButton_Click(sender, e);
+        }
     }
 }

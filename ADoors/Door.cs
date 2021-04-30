@@ -80,31 +80,36 @@ namespace ADoors
         /// <returns>Стоимость двери(-ей) с учётом количества</returns>
         public int ComputeCost(int count = 1)
         {
-            int basePrice = 0;
+            int BasePrice = 0;
 
             switch ((ModelId)Model)
             {
                 case ModelId.Леонардо:
-                    basePrice = 10000;
+                    BasePrice = 10000;
                     break;
                 case ModelId.Маргарет:
-                    basePrice = 78000;
+                    BasePrice = 7800;
                     break;
                 case ModelId.Рузвельт:
-                    basePrice = 8000;
+                    BasePrice = 8000;
                     break;
                 case ModelId.Трио:
-                    basePrice = 14000;
+                    BasePrice = 14000;
                     break;
                 case ModelId.Черчилль:
-                    basePrice = 16000;
-                    break;
-                default:
-                    basePrice = 0;
+                    BasePrice = 16000;
                     break;
             }
 
-            return basePrice * count;
+            //Учитываем ширину
+            BasePrice = BasePrice * Width / 500;
+
+            if (HasDoorhandle)
+                BasePrice += 1200;
+            if (HasPlatband)
+                BasePrice += 1000;
+            
+            return BasePrice * count;
         }
     }
 }
