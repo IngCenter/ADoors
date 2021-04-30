@@ -47,11 +47,13 @@ namespace ADoors
             this.DoorPB = new System.Windows.Forms.PictureBox();
             this.Textpricelabel = new System.Windows.Forms.Label();
             this.Pricelabel = new System.Windows.Forms.Label();
+            this.CostInfoPanel = new System.Windows.Forms.Panel();
             this.OptionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).BeginInit();
             this.DoorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).BeginInit();
+            this.CostInfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // OptionsPanel
@@ -72,18 +74,16 @@ namespace ADoors
             this.OptionsPanel.Controls.Add(this.ModelChoice);
             this.OptionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OptionsPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.OptionsPanel.Name = "OptionsPanel";
-            this.OptionsPanel.Size = new System.Drawing.Size(267, 266);
+            this.OptionsPanel.Size = new System.Drawing.Size(200, 216);
             this.OptionsPanel.TabIndex = 0;
             // 
             // ComputeButton
             // 
             this.ComputeButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ComputeButton.Location = new System.Drawing.Point(0, 238);
-            this.ComputeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ComputeButton.Location = new System.Drawing.Point(0, 193);
             this.ComputeButton.Name = "ComputeButton";
-            this.ComputeButton.Size = new System.Drawing.Size(267, 28);
+            this.ComputeButton.Size = new System.Drawing.Size(200, 23);
             this.ComputeButton.TabIndex = 12;
             this.ComputeButton.Text = "Рассчитать!";
             this.ComputeButton.UseVisualStyleBackColor = true;
@@ -91,15 +91,14 @@ namespace ADoors
             // 
             // DoorCountChoice
             // 
-            this.DoorCountChoice.Location = new System.Drawing.Point(120, 193);
-            this.DoorCountChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.DoorCountChoice.Location = new System.Drawing.Point(90, 157);
             this.DoorCountChoice.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.DoorCountChoice.Name = "DoorCountChoice";
-            this.DoorCountChoice.Size = new System.Drawing.Size(143, 22);
+            this.DoorCountChoice.Size = new System.Drawing.Size(107, 20);
             this.DoorCountChoice.TabIndex = 11;
             this.DoorCountChoice.Value = new decimal(new int[] {
             1,
@@ -111,10 +110,9 @@ namespace ADoors
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 196);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(4, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 17);
+            this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Кол-во дверей";
             // 
@@ -122,10 +120,9 @@ namespace ADoors
             // 
             this.PlatbandChoice.AutoSize = true;
             this.PlatbandChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PlatbandChoice.Location = new System.Drawing.Point(4, 166);
-            this.PlatbandChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.PlatbandChoice.Location = new System.Drawing.Point(3, 135);
             this.PlatbandChoice.Name = "PlatbandChoice";
-            this.PlatbandChoice.Size = new System.Drawing.Size(95, 21);
+            this.PlatbandChoice.Size = new System.Drawing.Size(75, 17);
             this.PlatbandChoice.TabIndex = 9;
             this.PlatbandChoice.Text = "Наличник";
             this.PlatbandChoice.UseVisualStyleBackColor = true;
@@ -135,10 +132,9 @@ namespace ADoors
             // 
             this.DoorHandleChoice.AutoSize = true;
             this.DoorHandleChoice.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DoorHandleChoice.Location = new System.Drawing.Point(4, 138);
-            this.DoorHandleChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.DoorHandleChoice.Location = new System.Drawing.Point(3, 112);
             this.DoorHandleChoice.Name = "DoorHandleChoice";
-            this.DoorHandleChoice.Size = new System.Drawing.Size(93, 21);
+            this.DoorHandleChoice.Size = new System.Drawing.Size(73, 17);
             this.DoorHandleChoice.TabIndex = 8;
             this.DoorHandleChoice.Text = "Ручка      ";
             this.DoorHandleChoice.UseVisualStyleBackColor = true;
@@ -151,8 +147,7 @@ namespace ADoors
             0,
             0,
             0});
-            this.WidthChoice.Location = new System.Drawing.Point(75, 106);
-            this.WidthChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.WidthChoice.Location = new System.Drawing.Point(56, 86);
             this.WidthChoice.Maximum = new decimal(new int[] {
             900,
             0,
@@ -164,7 +159,7 @@ namespace ADoors
             0,
             0});
             this.WidthChoice.Name = "WidthChoice";
-            this.WidthChoice.Size = new System.Drawing.Size(188, 22);
+            this.WidthChoice.Size = new System.Drawing.Size(141, 20);
             this.WidthChoice.TabIndex = 7;
             this.WidthChoice.Value = new decimal(new int[] {
             400,
@@ -176,10 +171,9 @@ namespace ADoors
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 110);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(4, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Ширина";
             // 
@@ -194,20 +188,18 @@ namespace ADoors
             "Остеклённый (Матовое стекло)",
             "Частично остеклённый (Искажённое стекло)",
             "Остеклённый (Искажённое стекло)"});
-            this.TypeChoice.Location = new System.Drawing.Point(73, 73);
-            this.TypeChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.TypeChoice.Location = new System.Drawing.Point(55, 59);
             this.TypeChoice.Name = "TypeChoice";
-            this.TypeChoice.Size = new System.Drawing.Size(188, 24);
+            this.TypeChoice.Size = new System.Drawing.Size(142, 21);
             this.TypeChoice.TabIndex = 5;
             this.TypeChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 76);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(4, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 17);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Тип";
             // 
@@ -219,30 +211,27 @@ namespace ADoors
             "Эмаль",
             "Бреннерский орех",
             "Венге"});
-            this.ColorChoice.Location = new System.Drawing.Point(73, 42);
-            this.ColorChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.ColorChoice.Location = new System.Drawing.Point(55, 34);
             this.ColorChoice.Name = "ColorChoice";
-            this.ColorChoice.Size = new System.Drawing.Size(188, 24);
+            this.ColorChoice.Size = new System.Drawing.Size(142, 21);
             this.ColorChoice.TabIndex = 3;
             this.ColorChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 44);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Цвет";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Модель";
             // 
@@ -256,10 +245,9 @@ namespace ADoors
             "Черчилль",
             "Рузвельт",
             "Маргарет"});
-            this.ModelChoice.Location = new System.Drawing.Point(73, 7);
-            this.ModelChoice.Margin = new System.Windows.Forms.Padding(4);
+            this.ModelChoice.Location = new System.Drawing.Point(55, 6);
             this.ModelChoice.Name = "ModelChoice";
-            this.ModelChoice.Size = new System.Drawing.Size(188, 24);
+            this.ModelChoice.Size = new System.Drawing.Size(142, 21);
             this.ModelChoice.TabIndex = 0;
             this.ModelChoice.SelectedIndexChanged += new System.EventHandler(this.ModelChoice_SelectedIndexChanged);
             // 
@@ -267,52 +255,65 @@ namespace ADoors
             // 
             this.DoorPanel.BackColor = System.Drawing.SystemColors.Control;
             this.DoorPanel.Controls.Add(this.DoorPB);
-            this.DoorPanel.Controls.Add(this.Textpricelabel);
-            this.DoorPanel.Controls.Add(this.Pricelabel);
+            this.DoorPanel.Controls.Add(this.CostInfoPanel);
             this.DoorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DoorPanel.Location = new System.Drawing.Point(267, 0);
-            this.DoorPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.DoorPanel.Location = new System.Drawing.Point(200, 0);
             this.DoorPanel.Name = "DoorPanel";
-            this.DoorPanel.Size = new System.Drawing.Size(346, 266);
+            this.DoorPanel.Size = new System.Drawing.Size(260, 216);
             this.DoorPanel.TabIndex = 1;
             // 
             // DoorPB
             // 
+            this.DoorPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DoorPB.Image = global::ADoors.Properties.Resources.door_cherchill;
-            this.DoorPB.Location = new System.Drawing.Point(82, 3);
+            this.DoorPB.Location = new System.Drawing.Point(0, 0);
+            this.DoorPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DoorPB.Name = "DoorPB";
-            this.DoorPB.Size = new System.Drawing.Size(189, 241);
+            this.DoorPB.Size = new System.Drawing.Size(260, 196);
             this.DoorPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DoorPB.TabIndex = 2;
             this.DoorPB.TabStop = false;
             // 
             // Textpricelabel
             // 
-            this.Textpricelabel.AutoSize = true;
+            this.Textpricelabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Textpricelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Textpricelabel.Location = new System.Drawing.Point(32, 244);
+            this.Textpricelabel.Location = new System.Drawing.Point(0, 0);
+            this.Textpricelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Textpricelabel.Name = "Textpricelabel";
-            this.Textpricelabel.Size = new System.Drawing.Size(123, 17);
+            this.Textpricelabel.Size = new System.Drawing.Size(99, 20);
             this.Textpricelabel.TabIndex = 1;
             this.Textpricelabel.Text = "Итоговая цена:";
+            this.Textpricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Pricelabel
             // 
-            this.Pricelabel.AutoSize = true;
-            this.Pricelabel.Location = new System.Drawing.Point(161, 244);
+            this.Pricelabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Pricelabel.Location = new System.Drawing.Point(103, 0);
+            this.Pricelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Pricelabel.Name = "Pricelabel";
-            this.Pricelabel.Size = new System.Drawing.Size(158, 17);
+            this.Pricelabel.Size = new System.Drawing.Size(157, 20);
             this.Pricelabel.TabIndex = 0;
             this.Pricelabel.Text = "нажмите \"Рассчитать!\"";
+            this.Pricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CostInfoPanel
+            // 
+            this.CostInfoPanel.Controls.Add(this.Textpricelabel);
+            this.CostInfoPanel.Controls.Add(this.Pricelabel);
+            this.CostInfoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CostInfoPanel.Location = new System.Drawing.Point(0, 196);
+            this.CostInfoPanel.Name = "CostInfoPanel";
+            this.CostInfoPanel.Size = new System.Drawing.Size(260, 20);
+            this.CostInfoPanel.TabIndex = 3;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 266);
+            this.ClientSize = new System.Drawing.Size(460, 216);
             this.Controls.Add(this.DoorPanel);
             this.Controls.Add(this.OptionsPanel);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Калькулятор стоимости двери";
             this.OptionsPanel.ResumeLayout(false);
@@ -320,8 +321,8 @@ namespace ADoors
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).EndInit();
             this.DoorPanel.ResumeLayout(false);
-            this.DoorPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).EndInit();
+            this.CostInfoPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -346,6 +347,7 @@ namespace ADoors
         private System.Windows.Forms.Label Pricelabel;
         private System.Windows.Forms.Label Textpricelabel;
         private System.Windows.Forms.PictureBox DoorPB;
+        private System.Windows.Forms.Panel CostInfoPanel;
     }
 }
 
