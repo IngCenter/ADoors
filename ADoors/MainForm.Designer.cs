@@ -45,9 +45,9 @@ namespace ADoors
             this.ModelChoice = new System.Windows.Forms.ComboBox();
             this.DoorPanel = new System.Windows.Forms.Panel();
             this.DoorPB = new System.Windows.Forms.PictureBox();
+            this.CostInfoPanel = new System.Windows.Forms.Panel();
             this.Textpricelabel = new System.Windows.Forms.Label();
             this.Pricelabel = new System.Windows.Forms.Label();
-            this.CostInfoPanel = new System.Windows.Forms.Panel();
             this.OptionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).BeginInit();
@@ -267,12 +267,22 @@ namespace ADoors
             this.DoorPB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DoorPB.Image = global::ADoors.Properties.Resources.door_cherchill;
             this.DoorPB.Location = new System.Drawing.Point(0, 0);
-            this.DoorPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DoorPB.Margin = new System.Windows.Forms.Padding(2);
             this.DoorPB.Name = "DoorPB";
             this.DoorPB.Size = new System.Drawing.Size(260, 196);
             this.DoorPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DoorPB.TabIndex = 2;
             this.DoorPB.TabStop = false;
+            // 
+            // CostInfoPanel
+            // 
+            this.CostInfoPanel.Controls.Add(this.Textpricelabel);
+            this.CostInfoPanel.Controls.Add(this.Pricelabel);
+            this.CostInfoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CostInfoPanel.Location = new System.Drawing.Point(0, 196);
+            this.CostInfoPanel.Name = "CostInfoPanel";
+            this.CostInfoPanel.Size = new System.Drawing.Size(260, 20);
+            this.CostInfoPanel.TabIndex = 3;
             // 
             // Textpricelabel
             // 
@@ -297,16 +307,6 @@ namespace ADoors
             this.Pricelabel.Text = "нажмите \"Рассчитать!\"";
             this.Pricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CostInfoPanel
-            // 
-            this.CostInfoPanel.Controls.Add(this.Textpricelabel);
-            this.CostInfoPanel.Controls.Add(this.Pricelabel);
-            this.CostInfoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CostInfoPanel.Location = new System.Drawing.Point(0, 196);
-            this.CostInfoPanel.Name = "CostInfoPanel";
-            this.CostInfoPanel.Size = new System.Drawing.Size(260, 20);
-            this.CostInfoPanel.TabIndex = 3;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +316,7 @@ namespace ADoors
             this.Controls.Add(this.OptionsPanel);
             this.Name = "MainForm";
             this.Text = "Калькулятор стоимости двери";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.OptionsPanel.ResumeLayout(false);
             this.OptionsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).EndInit();

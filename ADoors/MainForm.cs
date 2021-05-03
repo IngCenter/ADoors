@@ -12,14 +12,23 @@ namespace ADoors
         public MainForm()
         {
             InitializeComponent();
+
+            SQLClass.OpenConnection();
+
             List<string> list = SQLClass.Select("SELECT Name FROM models ORDER BY id");
             List<Image> images = SQLClass.SelectImages("SELECT Picture FROM models ORDER BY id");
+
             ModelChoice.Items.Clear();
             for (int i = 0; i < images.Count; i++)
             {
                 ModelChoice.Items.Add(list[i]);
                 doorPics.Add(list[i], images[i]);
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SQLClass.CloseConnection();
         }
 
         private void ComputeButton_Click(object sender, EventArgs e)

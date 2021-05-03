@@ -1,10 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Drawing;
+﻿using System;
 using System.IO;
-using System.Text;
+using System.Drawing;
+using System.Data.Common;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace ADoors
 {
@@ -27,12 +26,15 @@ namespace ADoors
         public static void CloseConnection()
         {
             conn.Close();
+            conn.Dispose();
         }
+
         public static List<string> Select(string Text, List<MySqlParameter> sqlParams = null)
         {
-            //Результат
+            // Результат
             List<string> results = new List<string>();
-            //Создать команду
+
+            // Создать команду
             MySqlCommand command = new MySqlCommand(Text, conn);
 
             // Добавить параметры, если есть
@@ -41,13 +43,14 @@ namespace ADoors
                     command.Parameters.Add(_sqlparam);
                 });
 
-            //Выполнить команду
+            // Выполнить команду
             DbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 for (int i = 0; i < reader.FieldCount; i++)
                     results.Add(reader.GetValue(i).ToString());
             }
+
             reader.Close();
             command.Dispose();
 
@@ -57,8 +60,8 @@ namespace ADoors
         public static List<Image> SelectImages(string text)
         {
             List<Image> img = new List<Image>();
-            MySqlCommand command = new MySqlCommand(text, conn);
 
+            MySqlCommand command = new MySqlCommand(text, conn);
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -78,8 +81,8 @@ namespace ADoors
                     }
                 }
             }
-            reader.Close();
 
+            reader.Close();
             command.Dispose();
 
             return img;
