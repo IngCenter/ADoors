@@ -17,9 +17,9 @@ namespace ADoors
             conn = new MySqlConnection();
             conn.ConnectionString = 
                 "Server = VH287.spaceweb.ru;" +
-                "Database = beavisabra_doors;" +
+                "Database = beavisabra_adoor;" +
                 "port = 3306;" +
-                "User Id = beavisabra_doors;" +
+                "User Id = beavisabra_adoor;" +
                 "password = Beavis1989";
             conn.Open();
         }
