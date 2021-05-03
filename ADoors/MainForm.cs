@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ADoors
@@ -8,6 +10,8 @@ namespace ADoors
         public MainForm()
         {
             InitializeComponent();
+            List<string> list = SQLClass.Select("SELECT Name, Price, Mass, Id FROM doors");
+            List<Image> images = SQLClass.SelectImages("SELECT Image FROM doors");
         }
 
         private void ComputeButton_Click(object sender, EventArgs e)
