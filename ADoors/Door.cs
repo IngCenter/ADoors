@@ -1,43 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace ADoors
 {
-
-    /// <summary>
-    /// Нумерация модели понятными словами, 
-    /// т.е. вместо 0 можно писать Трио.
-    /// </summary>
-    public enum ModelId
-    {
-        Трио,
-        Черчилль,
-        Рузвельт,
-        Маргарет,
-        Леонардо
-    }
-
-    /// <summary>
-    /// Нумерация цветов
-    /// </summary>
-    public enum ColorId
-    {
-        Бреннерский_орех,
-        Венге,
-        Эмаль
-    }
-
     public class Door
     {
-
         /// <summary>
         /// Название модели
         /// </summary>
-        public int Model { get; set; }
+        public string Model { get; set; }
+
+        /// <summary>
+        /// Цена
+        /// </summary>
+        public int BasePrice { get; set; }
+
+        /// <summary>
+        /// Доступные Цвета
+        /// </summary>
+        public List<string> ColorsList { get; set; }
 
         /// <summary>
         /// Цвет
         /// </summary>
-        public int Color { get; set; }
+        public string Color { get; set; }
 
         /// <summary>
         /// Тип полотна (остеклённый, глухой...)
@@ -59,14 +46,27 @@ namespace ADoors
         /// </summary>
         public bool HasPlatband { get; set; }
 
+        /// <summary>
+        /// Фото
+        /// </summary>
+        public Image Picture { get; set; }
+
+        public Door() 
+        { }
+
         public Door(
-            ModelId _model, ColorId _color,
+            string _Model,
+            int _BasePrice, 
+            List<string> _ColorsList,
+            string _Color,
             string _type, int _width,
             bool _doorhandle, bool _platband
         )
         {
-            Model = (int)_model;
-            Color = (int)_color;
+            Model = _Model;
+            BasePrice = _BasePrice;
+            Color = _Color;
+            ColorsList = _ColorsList;
             Type = (_type != null) ? _type.Trim() : "";
             Width = _width;
             HasDoorhandle = _doorhandle;
@@ -80,36 +80,15 @@ namespace ADoors
         /// <returns>Стоимость двери(-ей) с учётом количества</returns>
         public int ComputeCost(int count = 1)
         {
-            int BasePrice = 0;
-
-            switch ((ModelId)Model)
-            {
-                case ModelId.Леонардо:
-                    BasePrice = 10000;
-                    break;
-                case ModelId.Маргарет:
-                    BasePrice = 7800;
-                    break;
-                case ModelId.Рузвельт:
-                    BasePrice = 8000;
-                    break;
-                case ModelId.Трио:
-                    BasePrice = 14000;
-                    break;
-                case ModelId.Черчилль:
-                    BasePrice = 16000;
-                    break;
-            }
-
             //Учитываем ширину
-            BasePrice = BasePrice * Width / 500;
+            int Price = BasePrice * Width / 500;
 
             if (HasDoorhandle)
-                BasePrice += 1200;
+                Price += 1200;
             if (HasPlatband)
-                BasePrice += 1000;
+                Price += 1000;
             
-            return BasePrice * count;
+            return Price * count;
         }
     }
 }

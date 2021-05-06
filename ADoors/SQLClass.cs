@@ -13,13 +13,15 @@ namespace ADoors
 
         public static void OpenConnection()
         {
-            conn = new MySqlConnection();
-            conn.ConnectionString = 
+            conn = new MySqlConnection
+            {
+                ConnectionString =
                 "Server = VH287.spaceweb.ru;" +
                 "Database = beavisabra_adoor;" +
                 "port = 3306;" +
                 "User Id = beavisabra_adoor;" +
-                "password = Beavis1989";
+                "password = Beavis1989"
+            };
             conn.Open();
         }
 
