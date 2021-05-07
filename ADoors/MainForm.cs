@@ -1,22 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ADoors
 {
     public partial class MainForm : Form
     {
+        readonly Dictionary<string, Door> doors = new Dictionary<string, Door>();
+        readonly Door currentDoor = new Door();
+
         public MainForm()
         {
             InitializeComponent();
 
-            List<string> list = SQLClass.Select("SELECT Name FROM models ORDER BY id");
+            List<string> list = SQLClass.Select(
+                "SELECT Name, Price, Id FROM models ORDER BY id");
             List<Image> images = SQLClass.SelectImages("SELECT Picture FROM models ORDER BY id");
 
             ModelChoice.Items.Clear();
-            for (int i = 0; i < images.Count; i++)
+            for (int i = 0; i < list.Count; i += 3)
             {
                 ModelChoice.Items.Add(list[i]);
-                doorPics.Add(list[i], images[i]);
+                List<string> colors = SQLClass.Select(
+                    "SELECT Name FROM colors JOIN model_colors ON colors.Id = model_colors.color_id WHERE model_id = " + list[i+2]);
+                
+                Door door = new Door
+                {
+                    BasePrice = Convert.ToInt32(list[i + 1]),
+                    Model = list[i],
+                    Picture = images[i / 3],
+                    ColorsList = colors
+                };
+
+                doors.Add(door.Model, door);
             }
         }
 
@@ -29,14 +46,13 @@ namespace ADoors
         {
             try
             {
-                Door door = new Door(
-                    (ModelId)Enum.Parse(typeof(ModelId), ModelChoice.Text.ToString()),
-                    (ColorId)Enum.Parse(typeof(ColorId), ColorChoice.Text.ToString()),
-                    TypeChoice.Text.ToString(),
-                    Convert.ToInt32(WidthChoice.Value),
-                    DoorHandleChoice.Checked,
-                    PlatbandChoice.Checked
-                );
+                Door door = doors[ModelChoice.Text];
+                door.HasDoorhandle = DoorHandleChoice.Checked;
+                door.HasPlatband = PlatbandChoice.Checked;
+                door.Color = ColorChoice.Text;
+                door.Width = Convert.ToInt32(WidthChoice.Value);
+                door.Type = TypeChoice.Text;
+
                 Pricelabel.Text = door.ComputeCost(Convert.ToInt32(DoorCountChoice.Value)).ToString() + " рублей";
             }
             catch (Exception)
@@ -52,6 +68,13 @@ namespace ADoors
 
         private void ModelChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (ModelChoice.Text != "")
+                    DoorPB.Image = doors[ModelChoice.Text].Picture;
+            }
+            catch (Exception) { }
+            
             if (ModelChoice.Text != "" && ColorChoice.Text != "")
                 ComputeButton_Click(sender, e);
         }
