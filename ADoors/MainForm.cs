@@ -9,10 +9,22 @@ namespace ADoors
 {
     public partial class MainForm : Form
     {
+        string GetFirst(List<string> values)
+        {
+            return values[0];
+        }
+        int GetFirst(List<int> values)
+        {
+            return values[0];
+        }
+
+
         Dictionary<string, Door> doors = new Dictionary<string, Door>();
 
         public MainForm()
         {
+            GetFirst(new List<int> { 1, 3, 5 });
+
             InitializeComponent();
             LoadDoors();
         }

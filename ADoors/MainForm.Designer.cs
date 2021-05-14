@@ -30,6 +30,7 @@ namespace ADoors
         private void InitializeComponent()
         {
             this.OptionsPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ComputeButton = new System.Windows.Forms.Button();
             this.DoorCountChoice = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,20 +50,19 @@ namespace ADoors
             this.Textpricelabel = new System.Windows.Forms.Label();
             this.Pricelabel = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.PasswordTB = new System.Windows.Forms.TextBox();
+            this.PasswordLbl = new System.Windows.Forms.Label();
             this.LoginLbl = new System.Windows.Forms.Label();
             this.LoginTB = new System.Windows.Forms.TextBox();
-            this.PasswordLbl = new System.Windows.Forms.Label();
-            this.PasswordTB = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.OptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).BeginInit();
             this.DoorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).BeginInit();
             this.CostInfoPanel.SuspendLayout();
             this.LoginPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // OptionsPanel
@@ -88,6 +88,15 @@ namespace ADoors
             this.OptionsPanel.Name = "OptionsPanel";
             this.OptionsPanel.Size = new System.Drawing.Size(434, 393);
             this.OptionsPanel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(406, 224);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 81);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ComputeButton
             // 
@@ -356,6 +365,25 @@ namespace ADoors
             this.LoginPanel.TabIndex = 2;
             this.LoginPanel.Visible = false;
             // 
+            // PasswordTB
+            // 
+            this.PasswordTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PasswordTB.Location = new System.Drawing.Point(600, 3);
+            this.PasswordTB.Name = "PasswordTB";
+            this.PasswordTB.Size = new System.Drawing.Size(193, 32);
+            this.PasswordTB.TabIndex = 3;
+            this.PasswordTB.UseSystemPasswordChar = true;
+            // 
+            // PasswordLbl
+            // 
+            this.PasswordLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PasswordLbl.Location = new System.Drawing.Point(401, 0);
+            this.PasswordLbl.Name = "PasswordLbl";
+            this.PasswordLbl.Size = new System.Drawing.Size(193, 39);
+            this.PasswordLbl.TabIndex = 2;
+            this.PasswordLbl.Text = "Пароль";
+            this.PasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // LoginLbl
             // 
             this.LoginLbl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -374,25 +402,6 @@ namespace ADoors
             this.LoginTB.Size = new System.Drawing.Size(193, 32);
             this.LoginTB.TabIndex = 0;
             // 
-            // PasswordLbl
-            // 
-            this.PasswordLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordLbl.Location = new System.Drawing.Point(401, 0);
-            this.PasswordLbl.Name = "PasswordLbl";
-            this.PasswordLbl.Size = new System.Drawing.Size(193, 39);
-            this.PasswordLbl.TabIndex = 2;
-            this.PasswordLbl.Text = "Пароль";
-            this.PasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PasswordTB
-            // 
-            this.PasswordTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PasswordTB.Location = new System.Drawing.Point(600, 3);
-            this.PasswordTB.Name = "PasswordTB";
-            this.PasswordTB.Size = new System.Drawing.Size(193, 32);
-            this.PasswordTB.TabIndex = 3;
-            this.PasswordTB.UseSystemPasswordChar = true;
-            // 
             // LoginBtn
             // 
             this.LoginBtn.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -403,15 +412,6 @@ namespace ADoors
             this.LoginBtn.Text = "Войти";
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(406, 224);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 81);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainForm
             // 
@@ -428,6 +428,7 @@ namespace ADoors
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.OptionsPanel.ResumeLayout(false);
             this.OptionsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WidthChoice)).EndInit();
             this.DoorPanel.ResumeLayout(false);
@@ -435,7 +436,6 @@ namespace ADoors
             this.CostInfoPanel.ResumeLayout(false);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

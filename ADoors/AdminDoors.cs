@@ -15,6 +15,14 @@ namespace ADoors
         public AdminDoors()
         {
             InitializeComponent();
+
+            List<string> colors = SQLClass.Select("SELECT DISTINCT Name FROM colors ORDER BY Name");
+            ColorsCLB.Items.AddRange(colors.ToArray());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
