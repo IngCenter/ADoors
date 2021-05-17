@@ -38,8 +38,14 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.PhotoLabel = new System.Windows.Forms.Label();
+            this.PhotoPB = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoPB)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,6 +63,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(670, 504);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -82,6 +89,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.PriceTextBox);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.PhotoPB);
+            this.panel1.Controls.Add(this.PhotoLabel);
             this.panel1.Controls.Add(this.ColorsCLB);
             this.panel1.Controls.Add(this.ColorsLabel);
             this.panel1.Controls.Add(this.NameTextBox);
@@ -143,11 +154,60 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // PhotoLabel
+            // 
+            this.PhotoLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhotoLabel.Location = new System.Drawing.Point(0, 212);
+            this.PhotoLabel.Name = "PhotoLabel";
+            this.PhotoLabel.Size = new System.Drawing.Size(300, 40);
+            this.PhotoLabel.TabIndex = 5;
+            this.PhotoLabel.Text = "Фотка";
+            this.PhotoLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // PhotoPB
+            // 
+            this.PhotoPB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhotoPB.Location = new System.Drawing.Point(0, 252);
+            this.PhotoPB.Name = "PhotoPB";
+            this.PhotoPB.Size = new System.Drawing.Size(300, 117);
+            this.PhotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PhotoPB.TabIndex = 6;
+            this.PhotoPB.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 369);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Цена";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PriceTextBox.Location = new System.Drawing.Point(0, 407);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(300, 30);
+            this.PriceTextBox.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(599, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 54);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AdminDoors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 504);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -157,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoPB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +234,10 @@
         private System.Windows.Forms.CheckedListBox ColorsCLB;
         private System.Windows.Forms.Label ColorsLabel;
         private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.PictureBox PhotoPB;
+        private System.Windows.Forms.Label PhotoLabel;
+        private System.Windows.Forms.TextBox PriceTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }

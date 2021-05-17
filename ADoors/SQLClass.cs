@@ -31,6 +31,29 @@ namespace ADoors
             conn.Dispose();
         }
 
+        public static void Update(string Text, List<MySqlParameter> sqlParams = null)
+        {  // Создать команду
+            MySqlCommand command = new MySqlCommand(Text, conn);
+
+            // Добавить параметры, если есть
+            if (sqlParams != null)
+                sqlParams.ForEach((MySqlParameter _sqlparam) => {
+                    command.Parameters.Add(_sqlparam);
+                });
+
+            // Выполнить команду
+            try
+            {
+                DbDataReader reader = command.ExecuteReader();
+                reader.Close();
+            }
+            catch (Exception e) {
+                string s = e.Message;
+            }
+
+            command.Dispose();
+        }
+    
         public static List<string> Select(string Text, List<MySqlParameter> sqlParams = null)
         {
             // Результат
