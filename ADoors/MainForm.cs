@@ -14,6 +14,8 @@ namespace ADoors
         {
             InitializeComponent();
 
+            ShippingTypeComboBox.SelectedIndex = 0;
+
             List<string> list = SQLClass.Select(
                 "SELECT Name, Price, Id FROM models ORDER BY id");
             List<Image> images = SQLClass.SelectImages("SELECT Picture FROM models ORDER BY id");
