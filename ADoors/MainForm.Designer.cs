@@ -1,4 +1,3 @@
-﻿
 namespace ADoors
 {
     partial class MainForm
@@ -55,6 +54,17 @@ namespace ADoors
             this.LoginLbl = new System.Windows.Forms.Label();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
+            this.ShippingPanel = new System.Windows.Forms.Panel();
+            this.floorNUD = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ShippingTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ElevatorCB = new System.Windows.Forms.CheckBox();
+            this.ShippingCB = new System.Windows.Forms.CheckBox();
+            this.ComplectationCB = new System.Windows.Forms.CheckBox();
+            this.UlskRB = new System.Windows.Forms.RadioButton();
+            this.NonUlskRB = new System.Windows.Forms.RadioButton();
+            this.DistanceTB = new System.Windows.Forms.TextBox();
             this.OptionsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DoorCountChoice)).BeginInit();
@@ -63,6 +73,8 @@ namespace ADoors
             ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).BeginInit();
             this.CostInfoPanel.SuspendLayout();
             this.LoginPanel.SuspendLayout();
+            this.ShippingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.floorNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // OptionsPanel
@@ -84,8 +96,8 @@ namespace ADoors
             this.OptionsPanel.Controls.Add(this.ModelChoice);
             this.OptionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OptionsPanel.Location = new System.Drawing.Point(0, 0);
-            this.OptionsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.OptionsPanel.Name = "OptionsPanel";
+            this.OptionsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.OptionsPanel.Size = new System.Drawing.Size(434, 393);
             this.OptionsPanel.TabIndex = 0;
             // 
@@ -287,6 +299,7 @@ namespace ADoors
             // DoorPanel
             // 
             this.DoorPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.DoorPanel.Controls.Add(this.ShippingPanel);
             this.DoorPanel.Controls.Add(this.DoorPB);
             this.DoorPanel.Controls.Add(this.CostInfoPanel);
             this.DoorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -298,7 +311,7 @@ namespace ADoors
             // 
             // DoorPB
             // 
-            this.DoorPB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DoorPB.Dock = System.Windows.Forms.DockStyle.Right;
             this.DoorPB.Image = global::ADoors.Properties.Resources.door_cherchill;
             this.DoorPB.Location = new System.Drawing.Point(0, 0);
             this.DoorPB.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -413,6 +426,143 @@ namespace ADoors
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
+            // ShippingPanel
+            // 
+            this.ShippingPanel.BackColor = System.Drawing.Color.Peru;
+            this.ShippingPanel.Controls.Add(this.DistanceTB);
+            this.ShippingPanel.Controls.Add(this.NonUlskRB);
+            this.ShippingPanel.Controls.Add(this.UlskRB);
+            this.ShippingPanel.Controls.Add(this.ComplectationCB);
+            this.ShippingPanel.Controls.Add(this.ShippingCB);
+            this.ShippingPanel.Controls.Add(this.ElevatorCB);
+            this.ShippingPanel.Controls.Add(this.floorNUD);
+            this.ShippingPanel.Controls.Add(this.label9);
+            this.ShippingPanel.Controls.Add(this.label10);
+            this.ShippingPanel.Controls.Add(this.ShippingTypeComboBox);
+            this.ShippingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShippingPanel.Location = new System.Drawing.Point(0, 0);
+            this.ShippingPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.ShippingPanel.Name = "ShippingPanel";
+            this.ShippingPanel.Size = new System.Drawing.Size(329, 301);
+            this.ShippingPanel.TabIndex = 4;
+            // 
+            // floorNUD
+            // 
+            this.floorNUD.Location = new System.Drawing.Point(69, 244);
+            this.floorNUD.Margin = new System.Windows.Forms.Padding(5);
+            this.floorNUD.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.floorNUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.floorNUD.Name = "floorNUD";
+            this.floorNUD.Size = new System.Drawing.Size(91, 26);
+            this.floorNUD.TabIndex = 7;
+            this.floorNUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(5, 246);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Этаж";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 169);
+            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(155, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Способ доставки";
+            // 
+            // ShippingTypeComboBox
+            // 
+            this.ShippingTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ShippingTypeComboBox.FormattingEnabled = true;
+            this.ShippingTypeComboBox.Items.AddRange(new object[] {
+            "До квартиры",
+            "До подъезда"});
+            this.ShippingTypeComboBox.Location = new System.Drawing.Point(5, 194);
+            this.ShippingTypeComboBox.Margin = new System.Windows.Forms.Padding(5);
+            this.ShippingTypeComboBox.Name = "ShippingTypeComboBox";
+            this.ShippingTypeComboBox.Size = new System.Drawing.Size(315, 28);
+            this.ShippingTypeComboBox.TabIndex = 0;
+            // 
+            // ElevatorCB
+            // 
+            this.ElevatorCB.AutoSize = true;
+            this.ElevatorCB.Location = new System.Drawing.Point(241, 244);
+            this.ElevatorCB.Name = "ElevatorCB";
+            this.ElevatorCB.Size = new System.Drawing.Size(79, 24);
+            this.ElevatorCB.TabIndex = 8;
+            this.ElevatorCB.Text = "Лифт";
+            this.ElevatorCB.UseVisualStyleBackColor = true;
+            // 
+            // ShippingCB
+            // 
+            this.ShippingCB.AutoSize = true;
+            this.ShippingCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.ShippingCB.Location = new System.Drawing.Point(8, 64);
+            this.ShippingCB.Name = "ShippingCB";
+            this.ShippingCB.Size = new System.Drawing.Size(132, 29);
+            this.ShippingCB.TabIndex = 9;
+            this.ShippingCB.Text = "Доставка";
+            this.ShippingCB.UseVisualStyleBackColor = true;
+            // 
+            // ComplectationCB
+            // 
+            this.ComplectationCB.AutoSize = true;
+            this.ComplectationCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComplectationCB.Location = new System.Drawing.Point(9, 9);
+            this.ComplectationCB.Name = "ComplectationCB";
+            this.ComplectationCB.Size = new System.Drawing.Size(106, 29);
+            this.ComplectationCB.TabIndex = 10;
+            this.ComplectationCB.Text = "Сборка";
+            this.ComplectationCB.UseVisualStyleBackColor = true;
+            // 
+            // UlskRB
+            // 
+            this.UlskRB.AutoSize = true;
+            this.UlskRB.Location = new System.Drawing.Point(8, 95);
+            this.UlskRB.Name = "UlskRB";
+            this.UlskRB.Size = new System.Drawing.Size(119, 24);
+            this.UlskRB.TabIndex = 11;
+            this.UlskRB.TabStop = true;
+            this.UlskRB.Text = "Ульяновск";
+            this.UlskRB.UseVisualStyleBackColor = true;
+            // 
+            // NonUlskRB
+            // 
+            this.NonUlskRB.AutoSize = true;
+            this.NonUlskRB.Location = new System.Drawing.Point(8, 125);
+            this.NonUlskRB.Name = "NonUlskRB";
+            this.NonUlskRB.Size = new System.Drawing.Size(265, 24);
+            this.NonUlskRB.TabIndex = 12;
+            this.NonUlskRB.TabStop = true;
+            this.NonUlskRB.Text = "Другой город в                 км";
+            this.NonUlskRB.UseVisualStyleBackColor = true;
+            // 
+            // DistanceTB
+            // 
+            this.DistanceTB.Location = new System.Drawing.Point(167, 123);
+            this.DistanceTB.Name = "DistanceTB";
+            this.DistanceTB.Size = new System.Drawing.Size(66, 26);
+            this.DistanceTB.TabIndex = 13;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
@@ -434,8 +584,9 @@ namespace ADoors
             this.DoorPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DoorPB)).EndInit();
             this.CostInfoPanel.ResumeLayout(false);
-            this.LoginPanel.ResumeLayout(false);
-            this.LoginPanel.PerformLayout();
+            this.ShippingPanel.ResumeLayout(false);
+            this.ShippingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.floorNUD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,6 +619,17 @@ namespace ADoors
         private System.Windows.Forms.TextBox PasswordTB;
         private System.Windows.Forms.Label PasswordLbl;
         private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.Panel ShippingPanel;
+        private System.Windows.Forms.CheckBox ElevatorCB;
+        private System.Windows.Forms.NumericUpDown floorNUD;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox ShippingTypeComboBox;
+        private System.Windows.Forms.TextBox DistanceTB;
+        private System.Windows.Forms.RadioButton NonUlskRB;
+        private System.Windows.Forms.RadioButton UlskRB;
+        private System.Windows.Forms.CheckBox ComplectationCB;
+        private System.Windows.Forms.CheckBox ShippingCB;
     }
 }
 

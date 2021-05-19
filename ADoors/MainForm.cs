@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Security.Cryptography;
@@ -28,10 +28,11 @@ namespace ADoors
             InitializeComponent();
             LoadDoors();
         }
-
+        
         public void LoadDoors()
         {
             doors = new Dictionary<string, Door>();
+            ShippingTypeComboBox.SelectedIndex = 0;
             List<string> list = SQLClass.Select(
                 "SELECT Name, Price, Id FROM models ORDER BY id");
             List<Image> images = SQLClass.SelectImages("SELECT Picture FROM models ORDER BY id");
