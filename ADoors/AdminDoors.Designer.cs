@@ -33,16 +33,17 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PhotoPB = new System.Windows.Forms.PictureBox();
+            this.PhotoLabel = new System.Windows.Forms.Label();
             this.ColorsCLB = new System.Windows.Forms.CheckedListBox();
             this.ColorsLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.PhotoLabel = new System.Windows.Forms.Label();
-            this.PhotoPB = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoPB)).BeginInit();
@@ -61,9 +62,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(670, 504);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectDoorInDGV);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectDoorInDGV);
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectDoorInDGV);
             // 
             // Column1
             // 
@@ -104,6 +108,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 504);
             this.panel1.TabIndex = 1;
+            // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PriceTextBox.Location = new System.Drawing.Point(0, 407);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(300, 30);
+            this.PriceTextBox.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 369);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 38);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Цена";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // PhotoPB
+            // 
+            this.PhotoPB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhotoPB.Location = new System.Drawing.Point(0, 252);
+            this.PhotoPB.Name = "PhotoPB";
+            this.PhotoPB.Size = new System.Drawing.Size(300, 117);
+            this.PhotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PhotoPB.TabIndex = 6;
+            this.PhotoPB.TabStop = false;
+            this.PhotoPB.Click += new System.EventHandler(this.PhotoPB_Click);
+            // 
+            // PhotoLabel
+            // 
+            this.PhotoLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PhotoLabel.Location = new System.Drawing.Point(0, 212);
+            this.PhotoLabel.Name = "PhotoLabel";
+            this.PhotoLabel.Size = new System.Drawing.Size(300, 40);
+            this.PhotoLabel.TabIndex = 5;
+            this.PhotoLabel.Text = "Фотка";
+            this.PhotoLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // ColorsCLB
             // 
@@ -154,44 +197,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // PhotoLabel
-            // 
-            this.PhotoLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PhotoLabel.Location = new System.Drawing.Point(0, 212);
-            this.PhotoLabel.Name = "PhotoLabel";
-            this.PhotoLabel.Size = new System.Drawing.Size(300, 40);
-            this.PhotoLabel.TabIndex = 5;
-            this.PhotoLabel.Text = "Фотка";
-            this.PhotoLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // PhotoPB
-            // 
-            this.PhotoPB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PhotoPB.Location = new System.Drawing.Point(0, 252);
-            this.PhotoPB.Name = "PhotoPB";
-            this.PhotoPB.Size = new System.Drawing.Size(300, 117);
-            this.PhotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PhotoPB.TabIndex = 6;
-            this.PhotoPB.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 369);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 38);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Цена";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // PriceTextBox
-            // 
-            this.PriceTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PriceTextBox.Location = new System.Drawing.Point(0, 407);
-            this.PriceTextBox.Name = "PriceTextBox";
-            this.PriceTextBox.Size = new System.Drawing.Size(300, 30);
-            this.PriceTextBox.TabIndex = 8;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(599, 0);
@@ -201,6 +206,10 @@
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // AdminDoors
             // 
@@ -239,5 +248,6 @@
         private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

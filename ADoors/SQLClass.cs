@@ -31,8 +31,31 @@ namespace ADoors
             conn.Dispose();
         }
 
-        public static void Update(string Text, List<MySqlParameter> sqlParams = null)
-        {  // Создать команду
+        public static void UpdateImg(String Text, String address)
+        {
+            FileStream pgFileStream = new FileStream(address, FileMode.Open, FileAccess.Read);
+            BinaryReader pgReader = new BinaryReader(new BufferedStream(pgFileStream));
+            MySqlCommand command = new MySqlCommand(Text, conn);
+
+            byte[] ImgByteA = pgReader.ReadBytes(Convert.ToInt32(pgFileStream.Length));
+
+            MySqlParameter param = command.CreateParameter();
+            param.ParameterName = "?Image";
+            param.MySqlDbType = MySqlDbType.Blob;
+            param.Value = ImgByteA;
+            command.Parameters.Add(param);
+
+            command.ExecuteNonQuery();
+            pgReader.Dispose();
+            command.Dispose();
+            pgFileStream.Dispose();
+        }
+
+        public static long Update(string Text, List<MySqlParameter> sqlParams = null)
+        {
+            long result = 0;
+            
+            // Создать команду
             MySqlCommand command = new MySqlCommand(Text, conn);
 
             // Добавить параметры, если есть
@@ -41,10 +64,12 @@ namespace ADoors
                     command.Parameters.Add(_sqlparam);
                 });
 
+
             // Выполнить команду
             try
             {
                 DbDataReader reader = command.ExecuteReader();
+                result = command.LastInsertedId;
                 reader.Close();
             }
             catch (Exception e) {
@@ -52,6 +77,7 @@ namespace ADoors
             }
 
             command.Dispose();
+            return result;
         }
     
         public static List<string> Select(string Text, List<MySqlParameter> sqlParams = null)
